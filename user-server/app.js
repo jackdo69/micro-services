@@ -6,7 +6,6 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 
 //routes
-import routes from './routes';
 import { handleError } from '../utils/error';
 
 const app = express();
@@ -18,7 +17,9 @@ app.use(helmet());
 app.use(morgan('dev'));
 // app.use(express.static(path.join(path.resolve(), 'public')));
 
-app.use('/', routes);
+app.use('/', (req, res, next) => {
+  res.send('Hello from user server');
+});
 
 //Unmatch routes
 app.use((req, res, next) => {
