@@ -1,4 +1,4 @@
-import Broker from './broker';
+import { Broker, Consumer } from './broker';
 import amqp from 'amqplib';
 import requireDir from 'require-directory';
 
@@ -19,10 +19,14 @@ async function init(module) {
   const brokers = await findWorkers(module, './rabbitmq');
 
   const channel = await connection.createChannel();
-  brokers.forEach(async (item) => await item.setup(channel));
+  brokers.forEach(async (item) => {
+    item.channel = channel;
+    await item.setup(channel);
+  });
 }
 
-export default {
+module.exports = {
   init,
   Broker,
+  Consumer,
 };

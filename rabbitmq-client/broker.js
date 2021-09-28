@@ -1,22 +1,10 @@
-class Broker {
+export class Broker {
   constructor(methods) {
     Object.keys(methods).map((it) => (this[it] = methods[it]));
   }
 }
-class Producer extends Broker {
-  constructor(methods) {
-    super(methods);
-  }
-  async publish(exchange, routingKey, message) {
-    this.channel.publish(
-      exchange,
-      routingKey,
-      Buffer.from(JSON.stringify(message))
-    );
-  }
-}
 
-class Consumer extends Broker {
+export class Consumer extends Broker {
   constructor(methods) {
     super(methods);
     this.callbacks = [];
@@ -32,8 +20,3 @@ class Consumer extends Broker {
     });
   }
 }
-
-export default {
-  Consumer,
-  Producer,
-};
