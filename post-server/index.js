@@ -1,9 +1,6 @@
-import http from 'http';
-import app from './app';
+import rabbitmqClient from '../rabbitmq-client';
 
-const PORT = process.env.PORT || 3001;
-
-const server = http.createServer(app);
-server.listen(PORT, () => {
-  console.log(`Post server is listening on port: ${PORT}`);
-});
+(async () => {
+  await rabbitmqClient.init(module);
+  console.log('Post server is up!');
+})();
