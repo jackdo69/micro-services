@@ -1,4 +1,4 @@
-import { Consumer } from '../../rabbitmq-client';
+import { Consumer } from '../../rabbitmq';
 
 const exchange = 'user-exchange';
 const queue = 'user-queue';

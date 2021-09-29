@@ -1,4 +1,4 @@
-import { Broker } from '../../rabbitmq-client';
+import { Broker } from '../../rabbitmq';
 
 const exchange = 'user-exchange';
 
