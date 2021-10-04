@@ -4,6 +4,8 @@ import httpRequestDurationMicroseconds from '../../prometheus/http-request-durat
 export default function (req, res, next) {
   const end = httpRequestDurationMicroseconds.startTimer();
   const route = url.parse(req.url).pathname;
-  end({ route, code: res.statusCode, method: req.method });
+  res.on('finish', () => {
+    end({ route, code: res.statusCode, method: req.method });
+  });
   next();
 }

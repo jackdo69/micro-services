@@ -3,7 +3,7 @@ import createApp from '../express';
 import rabbitmqClient from '../rabbitmq';
 import routes from './routes';
 (async () => {
-  const PORT = process.env.PORT || 3000;
+  const PORT = process.env.PORT || 4000;
   const app = await createApp((instance) => {
     instance.use('/', routes);
   });
