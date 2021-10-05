@@ -1,5 +1,5 @@
 import express from 'express';
-import register from '../../prometheus';
+import register from '../../../prometheus';
 const router = express.Router();
 
 router.get('/', async (req, res) => {

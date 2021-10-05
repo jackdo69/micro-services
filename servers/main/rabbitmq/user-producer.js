@@ -1,6 +1,6 @@
-import { Broker } from '../../rabbitmq';
+import { Broker } from '../../../rabbitmq';
 
-const exchange = 'post-exchange';
+const exchange = 'user-exchange';
 
 export default new Broker({
   async setup(channel) {

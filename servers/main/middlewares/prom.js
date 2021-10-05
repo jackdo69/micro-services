@@ -1,5 +1,5 @@
 import url from 'url';
-import httpRequestDurationMicroseconds from '../../prometheus/http-request-duration';
+import httpRequestDurationMicroseconds from '../../../prometheus/http-request-duration';
 
 export default function (req, res, next) {
   const end = httpRequestDurationMicroseconds.startTimer();

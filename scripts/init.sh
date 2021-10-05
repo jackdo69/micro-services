@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
-nodemon --exec babel-node main-server/index.js &
-nodemon --exec babel-node post-server/index.js &
-nodemon --exec babel-node user-server/index.js &
+docker-compose up -d &
+nodemon --exec babel-node servers/main &
+nodemon --exec babel-node servers/post &
+nodemon --exec babel-node servers/user &

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "scripts/init.sh",
-    "stop": "killall node",
+    "stop": "scripts/stop.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

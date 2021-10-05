@@ -1,4 +1,4 @@
-import rabbitmqClient from '../rabbitmq';
+import rabbitmqClient from '../../rabbitmq';
 
 (async () => {
   await rabbitmqClient.init(module);
