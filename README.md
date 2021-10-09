@@ -2,7 +2,7 @@
 
 This repo is the simulation of real world micro-services system build upon
 
-1. NodeJS  
+1. NodeJs  
    The main logic handling service
 
 2. RabbitMQ  
@@ -10,3 +10,16 @@ This repo is the simulation of real world micro-services system build upon
 
 3. Prometheus & Grafana  
    Act as monitoring tool
+
+4. Nginx  
+   Act as the proxy server for NodeJs app
+
+### Running
+
+```
+# Start the service
+npm start
+
+# Stop the service
+npm stop
+```
