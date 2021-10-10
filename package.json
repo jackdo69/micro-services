@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "scripts/init.sh",
-    "stop": "scripts/stop.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d build"
   },
   "keywords": [],
   "author": "Jackie",
@@ -17,13 +16,15 @@
     "express": "^4.17.1",
     "helmet": "^4.6.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.13",
     "prom-client": "^14.0.0",
     "require-directory": "^2.1.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.5",
     "@babel/node": "^7.15.4",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.15.6"
   }
 }

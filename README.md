@@ -17,9 +17,12 @@ This repo is the simulation of real world micro-services system build upon
 ### Running
 
 ```
+# Build the service
+docker build -t app:v1 .
+
 # Start the service
-npm start
+docker-compose up -d
 
 # Stop the service
-npm stop
+docker-compose down
 ```

@@ -1,6 +1,10 @@
 import rabbitmqClient from '../../rabbitmq';
 
 (async () => {
-  await rabbitmqClient.init(module);
+  try {
+    await rabbitmqClient.init(module);
+  } catch (e) {
+    console.log(e);
+  }
   console.log('User server is up!');
 })();

@@ -13,7 +13,8 @@ async function findWorkers(module, path) {
   return brokers;
 }
 async function init(module) {
-  const amqpUrl = process.env.RABBITMQ_URL || 'amqp://localhost:5672/';
+  const amqpUrl =
+    process.env.RABBITMQ_URL || 'amqp://guest:guest@localhost:5672/';
   const connection = await amqp.connect(amqpUrl);
   // get all workers
   const brokers = await findWorkers(module, './rabbitmq');
